@@ -1,6 +1,7 @@
 ﻿namespace PaymentServiceSolution.Core
 {
 	using Microsoft.EntityFrameworkCore;
+	using PaymentServiceSolution.Core.Data.Entities;
 
 	public class PaymentServiceSolutionDbContext : DbContext
 	{
@@ -17,9 +18,21 @@
 			}
 		}
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		public DbSet<Company> Companies { get; set; }
+
+		public DbSet<Product> Products { get; set; }
+
+		public DbSet<User> Users { get; set; }
+
+		protected override void OnModelCreating(ModelBuilder builder)
 		{
-			base.OnModelCreating(modelBuilder);
+			builder
+				.Entity<Product>()
+				.HasOne(p => p.Company)
+				.WithMany(c => c.Products)
+				.OnDelete(DeleteBehavior.Restrict);
+
+			base.OnModelCreating(builder);
 		}
 	}
 }

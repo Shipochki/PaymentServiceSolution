@@ -1,6 +1,8 @@
-
 namespace PaymentServiceSolution
 {
+	using Microsoft.EntityFrameworkCore;
+	using PaymentServiceSolution.Core;
+
 	public class Program
 	{
 		public static void Main(string[] args)
@@ -8,8 +10,13 @@ namespace PaymentServiceSolution
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+			var conncetionString = builder.Configuration.GetConnectionString("DefaultConnection");
+			builder.Services.AddDbContext<PaymentServiceSolutionDbContext>(options =>
+				options.UseSqlServer(conncetionString));
 
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddControllers();
+			builder.Services.AddEndpointsApiExplorer();
 
 			var app = builder.Build();
 
@@ -22,9 +29,10 @@ namespace PaymentServiceSolution
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+			app.UseDefaultFiles();
 			app.UseRouting();
 
-
+			app.MapControllers();
 			app.MapControllerRoute(
 				name: "default",
 				pattern: "{controller}/{action=Index}/{id?}");

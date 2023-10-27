@@ -1,5 +1,4 @@
-﻿
-namespace PaymentServiceSolution.Core.Common
+﻿namespace PaymentServiceSolution.Core.Common
 {
 	public static class DataConstraints
 	{
