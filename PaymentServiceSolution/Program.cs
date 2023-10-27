@@ -2,6 +2,8 @@ namespace PaymentServiceSolution
 {
 	using Microsoft.EntityFrameworkCore;
 	using PaymentServiceSolution.Core;
+	using PaymentServiceSolution.Core.Services.Company;
+	using PaymentServiceSolution.Core.Services.User;
 
 	public class Program
 	{
@@ -17,6 +19,9 @@ namespace PaymentServiceSolution
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
+
+			builder.Services.AddScoped<IUserService, UserService>();
+			builder.Services.AddScoped<ICompanyService, CompanyService>();
 
 			var app = builder.Build();
 

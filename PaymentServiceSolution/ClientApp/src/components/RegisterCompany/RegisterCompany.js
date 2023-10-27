@@ -31,9 +31,9 @@ export const RegisterCompany = () => {
                     <input
                         type="text"
                         id="name"
-                        name={RegisterFormKeys.Firstname}
+                        name={RegisterFormKeys.Name}
                         placeholder="encorp.io"
-                        value={values[RegisterFormKeys.Firstname]}
+                        value={values[RegisterFormKeys.Name]}
                         onChange={changeHandler}
                     />
 
@@ -68,7 +68,7 @@ export const RegisterCompany = () => {
                     <input className="btn submit" type="submit" value="Register" />
 
                     <p className="field">
-                        <span>If you already have profile click <Link to="/loginComapny">here</Link></span>
+                        <span>If you already have profile click <Link to="/loginCompany">here</Link></span>
                     </p>
                 </div>
             </form>
