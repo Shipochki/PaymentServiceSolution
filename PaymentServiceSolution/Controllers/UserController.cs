@@ -3,6 +3,7 @@
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Mvc;
 	using PaymentServiceSolution.Core.Services.User;
+	using PaymentServiceSolution.Core.Services.User.Models;
 
 	[Route("api/[controller]")]
 	[ApiController]
@@ -19,7 +20,7 @@
 		[Route("[action]")]
 		public async Task<IActionResult> Login([FromBody]object loginFromKeys)
 		{
-			var result = await this._userService.Login(loginFromKeys);
+			UserModel result = await this._userService.Login(loginFromKeys);
 			return Ok(result);
 		}
 
@@ -27,7 +28,8 @@
 		[Route("[action]")]
 		public async Task<IActionResult> Register([FromBody]object registerFromKeys)
 		{
-			return Ok(await this._userService.Register(registerFromKeys));
+			UserModel result = await this._userService.Register(registerFromKeys);
+			return Ok(result);
 		}
     }
 }

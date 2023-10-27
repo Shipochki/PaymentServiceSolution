@@ -5,7 +5,6 @@
 	using PaymentServiceSolution.Core.Data.Entities;
 	using PaymentServiceSolution.Core.Services.User.Models;
 	using static PaymentServiceSolution.Core.Common.Validation;
-	using static PaymentServiceSolution.Core.Common.TokenGenerator;
 
 	public class UserService : IUserService
 	{
@@ -74,8 +73,6 @@
 
 			await this._context.AddAsync(newUser);
 			await this._context.SaveChangesAsync();
-
-			string token = RandomToken(30);
 
 			UserModel result = new UserModel()
 			{

@@ -3,6 +3,7 @@ namespace PaymentServiceSolution
 	using Microsoft.EntityFrameworkCore;
 	using PaymentServiceSolution.Core;
 	using PaymentServiceSolution.Core.Services.Company;
+	using PaymentServiceSolution.Core.Services.Product;
 	using PaymentServiceSolution.Core.Services.User;
 
 	public class Program
@@ -22,6 +23,7 @@ namespace PaymentServiceSolution
 
 			builder.Services.AddScoped<IUserService, UserService>();
 			builder.Services.AddScoped<ICompanyService, CompanyService>();
+			builder.Services.AddScoped<IProductService, ProductService>();
 
 			var app = builder.Build();
 

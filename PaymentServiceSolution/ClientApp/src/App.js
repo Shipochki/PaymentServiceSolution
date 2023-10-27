@@ -12,9 +12,12 @@ import { RegisterCompany } from "./components/RegisterCompany/RegisterCompany.js
 import { Footer } from "./components/Footer/Footer";
 import { Logout } from "./components/Logout/Logout";
 import { AddProduct } from "./components/AddProduct/AddProduct";
+import { MyProducts } from "./components/MyProducts/MyProducts";
+import { useState } from "react";
 
 function App() {
   const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
 
   const onLoginCompanySubmit = async (loginFormKeys) => {
     try {
@@ -29,8 +32,8 @@ function App() {
 
       const result = await response.json();
 
-      localStorage.setItem('id', result.id);
-      localStorage.setItem('isCompany', result.isCompany);
+      localStorage.setItem("id", result.id);
+      localStorage.setItem("isCompany", result.isCompany);
 
       navigate("/");
     } catch (error) {
@@ -53,8 +56,8 @@ function App() {
 
       console.log(result);
 
-      localStorage.setItem('id', result.id);
-      localStorage.setItem('isCompany', result.isCompany);
+      localStorage.setItem("id", result.id);
+      localStorage.setItem("isCompany", result.isCompany);
 
       navigate("/");
     } catch (error) {
@@ -80,8 +83,8 @@ function App() {
 
       const result = await response.json();
 
-      localStorage.setItem('id', result.id);
-      localStorage.setItem('isCompany', result.isCompany);
+      localStorage.setItem("id", result.id);
+      localStorage.setItem("isCompany", result.isCompany);
 
       navigate("/");
     } catch {
@@ -107,8 +110,8 @@ function App() {
 
       const result = await response.json();
 
-      localStorage.setItem('id', result.id);
-      localStorage.setItem('isCompany', result.isCompany);
+      localStorage.setItem("id", result.id);
+      localStorage.setItem("isCompany", result.isCompany);
 
       navigate("/");
     } catch {
@@ -121,21 +124,40 @@ function App() {
   };
 
   const onAddProductSubmit = async (addProductFromKeys) => {
-    try{
-    await fetch(`/api/product/add`, {
-      method: "POST", // GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors,cors, same-origin
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(addProductFromKeys),
-    });
-  }catch{
-    console.log("Problem with add product")
-  }
+    try {
+      await fetch(`/api/product/addProduct`, {
+        method: "POST", // GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors,cors, same-origin
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(addProductFromKeys),
+      });
+    } catch {
+      console.log("Problem with add product");
+    }
 
-    navigate("/myProducts")
-  }
+    navigate("/");
+  };
+
+  const getProductsByCompanyId = async () => {
+    try {
+      const companyId = localStorage.id;
+
+      const response = await fetch(`/api/product/GetProductsByCompanyId/${companyId}`, {
+        method: "GET", // GET, POST, PUT, DELETE, etc.
+        //body: JSON.stringify(companyId),
+      });
+
+      const result = await response.json();
+
+      setProducts(result);
+
+      navigate("/myProducts");
+    } catch {
+      console.log("Problem get products by company id");
+    }
+  };
 
   const contextValues = {
     onLoginCompanySubmit,
@@ -144,7 +166,7 @@ function App() {
     onRegisterCompanySubmit,
     onLogout,
     onAddProductSubmit,
-    navigate,
+    getProductsByCompanyId,
   };
 
   return (
@@ -162,8 +184,14 @@ function App() {
             <Route path="/registerUser" element={<RegisterUser />} />
             <Route path="/registerCompnay" element={<RegisterCompany />} />
             <Route path="/logout" element={<Logout />} />
-            {localStorage.isCompany == 'true' && (
-              <Route path="/addProduct" element={<AddProduct/>}/>
+            {localStorage.isCompany == "true" && (
+              <Route path="/addProduct" element={<AddProduct />} />
+            )}
+            {localStorage.isCompany == "true" && (
+              <Route
+                path="/myProducts"
+                element={<MyProducts products={products} />}
+              />
             )}
           </Routes>
         </main>

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
 import "./header.css";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Header = () => {
+    const { getProductsByCompanyId } = useContext(AuthContext)
   return (
     <header>
       <h1>
@@ -18,9 +21,14 @@ export const Header = () => {
                 Logout
               </Link>
               {localStorage.isCompany == 'true' && (
+                <div>
                 <Link className="addProduct-btn" to={"/addProduct"}>
                 Add Product
               </Link>
+              <Link className="myProducts" onClick={() => {
+                getProductsByCompanyId();
+              }}>My Products</Link>
+              </div>
               )}
             </div>
           )}
