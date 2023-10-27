@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentServiceSolution", "PaymentServiceSolution\PaymentServiceSolution.csproj", "{AD3CBC23-3BCF-4AC6-A566-8985B4D82E5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentServiceSolution.Core", "PaymentServiceSolution.Core\PaymentServiceSolution.Core.csproj", "{CBC25750-D5A3-4B99-8FA7-1ED3F4A4418D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AD3CBC23-3BCF-4AC6-A566-8985B4D82E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD3CBC23-3BCF-4AC6-A566-8985B4D82E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD3CBC23-3BCF-4AC6-A566-8985B4D82E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC25750-D5A3-4B99-8FA7-1ED3F4A4418D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC25750-D5A3-4B99-8FA7-1ED3F4A4418D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC25750-D5A3-4B99-8FA7-1ED3F4A4418D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC25750-D5A3-4B99-8FA7-1ED3F4A4418D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
