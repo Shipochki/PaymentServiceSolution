@@ -31,5 +31,13 @@
 			List<ProductModel> products = await this._productService.GetAllProductsByCompanyId(companyId);
 			return Ok(products);
 		}
+
+		[HttpGet]
+		[Route("[action]")]
+		public async Task<IActionResult> GetAll()
+		{
+			List<ProductModel> products = await this._productService.GetAllProducts();
+			return Ok(products);
+		}
 	}
 }

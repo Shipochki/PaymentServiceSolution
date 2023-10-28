@@ -10,6 +10,8 @@
 
 		public decimal Price { get; set; } 
 
+		public string? CompanyName { get; set; }
+
 		public string? ImageUrlLink { get; set; }
 	}
 }

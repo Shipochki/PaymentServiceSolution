@@ -7,5 +7,7 @@
 		public Task AddProduct(object addProducFromKeys);
 
 		public Task<List<ProductModel>> GetAllProductsByCompanyId(int id);
+
+		public Task<List<ProductModel>> GetAllProducts();
 	}
 }

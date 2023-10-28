@@ -5,3 +5,9 @@
     font-size: 30px;
     color: #71b7e6;
 }
+
+.cards-container{
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+}

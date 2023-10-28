@@ -163,22 +163,28 @@ function App() {
   };
 
   const getAllProducts = async () => {
-    const response = await fetch(
-      `api/product/GetAll`,
+    try {
+      const response = await fetch(
+      `/api/product/GetAll`,
       {
-        method:"GET"
+        method:"GET",
       }
     );
 
     const result = await response.json();
 
     setAllProducts(result);
+    } catch (error) {
+      console.log("Problem with get all")
+    }
+    
   }
 
   useEffect(() => {
+    getAllProducts();
+
     if (localStorage.isCompany == "true") {
       getProductsByCompanyId();
-      getAllProducts();
     }
   }, []);
 
@@ -202,7 +208,7 @@ function App() {
             {localStorage.isCompany == "true" && (
               <Route path="/" element={<MyProducts products={products} />} />
             )}
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home allProducts={allProducts}/>} />
             <Route path="/loginUser" element={<LoginUser />} />
             <Route path="/loginCompany" element={<LoginCompany />} />
             <Route path="/registerUser" element={<RegisterUser />} />

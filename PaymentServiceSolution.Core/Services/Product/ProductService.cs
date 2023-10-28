@@ -38,6 +38,26 @@
 			await this._context.SaveChangesAsync();
 		}
 
+		public async Task<List<ProductModel>> GetAllProducts()
+		{
+			List<ProductModel> products = await this._context
+				.Products
+				.Include(p => p.Company)
+				.Where(p => p.IsDeleted == false)
+				.Select(p => new ProductModel()
+				{
+					Id = p.Id,
+					Name = p.Name,
+					Price = p.Price,
+					CompanyName = p.Company.Name,
+					Description = p.Description,
+					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+				})
+				.ToListAsync();
+
+			return products;
+		}
+
 		public async Task<List<ProductModel>> GetAllProductsByCompanyId(int id)
 		{
 			List<ProductModel> products = await this._context
@@ -49,7 +69,7 @@
 					Name = p.Name,
 					Price = p.Price,
 					Description = p.Description,
-					ImageUrlLink = p.ImageUrlLink == null ? p.ImageUrlLink : "https://actogmbh.com/files/no-product-image.png",
+					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink 
 				})
 				.ToListAsync();
 
