@@ -180,6 +180,22 @@ function App() {
     
   }
 
+  const createSesison = async (productFormKeys) => {
+    try {
+      await fetch(`/api/Checkout/Create`, {
+      method:"POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productFormKeys),
+    })
+    } catch (error) {
+      console.log("problem")
+    }
+    
+  }
+
   useEffect(() => {
     getAllProducts();
 
@@ -196,6 +212,7 @@ function App() {
     onLogout,
     onAddProductSubmit,
     getProductsByCompanyId,
+    createSesison
   };
 
   return (

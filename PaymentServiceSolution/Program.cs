@@ -2,9 +2,13 @@ namespace PaymentServiceSolution
 {
 	using Microsoft.EntityFrameworkCore;
 	using PaymentServiceSolution.Core;
+	using PaymentServiceSolution.Core.Models;
 	using PaymentServiceSolution.Core.Services.Company;
 	using PaymentServiceSolution.Core.Services.Product;
+	using PaymentServiceSolution.Core.Services.Stripe;
 	using PaymentServiceSolution.Core.Services.User;
+	using Stripe;
+	using System.Configuration;
 
 	public class Program
 	{
@@ -17,13 +21,27 @@ namespace PaymentServiceSolution
 			builder.Services.AddDbContext<PaymentServiceSolutionDbContext>(options =>
 				options.UseSqlServer(conncetionString));
 
+			StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
+
+
+			builder.Services.AddRouting(options => options.LowercaseUrls = true);
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
 
+			IServiceCollection services = builder.Services;
+
+			services
+				.AddScoped<CustomerService>()
+				.AddScoped<ChargeService>()
+				.AddScoped<TokenService>()
+				.AddScoped<IStripeAppService, StripeAppService>();
+
+
+
 			builder.Services.AddScoped<IUserService, UserService>();
 			builder.Services.AddScoped<ICompanyService, CompanyService>();
-			builder.Services.AddScoped<IProductService, ProductService>();
+			builder.Services.AddScoped<IProductService, Core.Services.Product.ProductService>();
 
 			var app = builder.Build();
 
@@ -38,6 +56,7 @@ namespace PaymentServiceSolution
 			app.UseStaticFiles();
 			app.UseDefaultFiles();
 			app.UseRouting();
+			app.UseEndpoints(endpoints => endpoints.MapControllers());
 
 			app.MapControllers();
 			app.MapControllerRoute(

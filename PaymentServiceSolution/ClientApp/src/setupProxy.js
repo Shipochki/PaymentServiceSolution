@@ -11,7 +11,8 @@ const context =  [
   `/api/company/login`,
   `/api/product/addProduct`,
   `/api/product/GetProductsByCompanyId`,
-  `/api/product/GetAll`
+  `/api/product/GetAll`,
+  `/api/Stripe/customer/add`
 ];
 
 module.exports = function(app) {
