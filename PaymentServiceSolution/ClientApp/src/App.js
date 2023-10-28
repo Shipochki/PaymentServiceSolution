@@ -3,10 +3,8 @@ import { AuthContext } from "./contexts/AuthContext.js";
 import { Header } from "./components/Header/Header.js";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Home } from "./components/Home/Home.js";
-import { Login } from "./components/Login/Login.js";
 import { LoginCompany } from "./components/LoginCompany/LoginCompany.js";
 import { LoginUser } from "./components/LoginUser/LoginUser.js";
-import { Register } from "./components/Register/Register.js";
 import { RegisterUser } from "./components/RegisterUser/RegisterUser.js";
 import { RegisterCompany } from "./components/RegisterCompany/RegisterCompany.js";
 import { Footer } from "./components/Footer/Footer";
@@ -14,6 +12,7 @@ import { Logout } from "./components/Logout/Logout";
 import { AddProduct } from "./components/AddProduct/AddProduct";
 import { MyProducts } from "./components/MyProducts/MyProducts";
 import { useState } from "react";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 function App() {
   const navigate = useNavigate();
@@ -177,12 +176,10 @@ function App() {
         <main id="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/loginUser" element={<LoginUser />} />
             <Route path="/loginCompany" element={<LoginCompany />} />
-            <Route path="/register" element={<Register />} />
             <Route path="/registerUser" element={<RegisterUser />} />
-            <Route path="/registerCompnay" element={<RegisterCompany />} />
+            <Route path="/registerCompany" element={<RegisterCompany />} />
             <Route path="/logout" element={<Logout />} />
             {localStorage.isCompany == "true" && (
               <Route path="/addProduct" element={<AddProduct />} />

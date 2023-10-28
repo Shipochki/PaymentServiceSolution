@@ -5,12 +5,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export const Header = () => {
-    const { getProductsByCompanyId } = useContext(AuthContext)
+  const { getProductsByCompanyId } = useContext(AuthContext);
   return (
     <header>
       <h1>
-        <Link className="home" to={"/"}>
-          PSS
+        <Link className="site-name" to={"/"}>
+        PaymentServiceSolution
         </Link>
       </h1>
       <nav>
@@ -20,27 +20,48 @@ export const Header = () => {
               <Link className="logout-btn" to={"/logout"}>
                 Logout
               </Link>
-              {localStorage.isCompany == 'true' && (
+              {localStorage.isCompany == "true" && (
                 <div>
-                <Link className="addProduct-btn" to={"/addProduct"}>
-                Add Product
-              </Link>
-              <Link className="myProducts" onClick={() => {
-                getProductsByCompanyId();
-              }}>My Products</Link>
-              </div>
+                  <Link className="addProduct-btn" to={"/addProduct"}>
+                    Add Product
+                  </Link>
+                  <Link
+                    className="myProducts"
+                    onClick={() => {
+                      getProductsByCompanyId();
+                    }}
+                  >
+                    My Products
+                  </Link>
+                </div>
               )}
             </div>
           )}
 
           {!localStorage.getItem("id") && (
             <div>
-              <Link className="login-btn" to={"/login"}>
-                Login
-              </Link>
-              <Link className="register-btn" to={"/register"}>
-                Register
-              </Link>
+              <div className="dropdown">
+                <button className="dropbtn drop-login">Login</button>
+                <div className="dropdown-content">
+                  <Link className="login-btn" to={"/loginUser"}>
+                    Login as Client
+                  </Link>
+                  <Link className="login-btn" to={"/loginCompany"}>
+                    Login as Company
+                  </Link>
+                </div>
+              </div>
+              <div className="dropdown">
+                <button className="dropbtn drop-register">Register</button>
+                <div className="dropdown-content">
+                  <Link className="register-btn" to={"/registerUser"}>
+                    Register as Client
+                  </Link>
+                  <Link className="register-btn" to={"/registerCompany"}>
+                    Register as Company
+                  </Link>
+                </div>
+              </div>
             </div>
           )}
         </div>

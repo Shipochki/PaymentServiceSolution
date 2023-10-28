@@ -1,5 +1,9 @@
 export const Home = () => {
     return(
-        <div>Test</div>
+        <div className="home">
+            <div className="img-home">
+                <img src="/book.jpg"></img>
+            </div>
+        </div>
     )
 }

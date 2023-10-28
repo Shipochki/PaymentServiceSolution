@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
+import "./loginUser.css"
 
 const LoginFormKeys = {
     Email: 'email',
@@ -17,35 +18,78 @@ export const LoginUser = () => {
     }, onLoginUserSubmit);
 
     return(
-        <section id="login-page" className="auth">
-            <form id="login" method="POST" onSubmit={onSubmit}>
-                <div className="container">
-                    <div className="brand-logo"></div>
-                    <h1>Login Client</h1>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Sokka@gmail.com"
-                        name={LoginFormKeys.Email}
-                        value={values[LoginFormKeys.Email]}
-                        onChange={changeHandler}
-                    />
+        // <section id="login-page" className="auth">
+        //     <form id="login" method="POST" onSubmit={onSubmit}>
+        //         <div className="container">
+        //             <div className="brand-logo"></div>
+        //             <h1>Login Client</h1>
+        //             <label htmlFor="email">Email:</label>
+        //             <input
+        //                 type="email"
+        //                 id="email"
+        //                 placeholder="Sokka@gmail.com"
+        //                 name={LoginFormKeys.Email}
+        //                 value={values[LoginFormKeys.Email]}
+        //                 onChange={changeHandler}
+        //             />
 
-                    <label htmlFor="login-pass">Password:</label>
-                    <input
-                        type="password"
-                        id="login-password"
-                        name={LoginFormKeys.Password}
-                        value={values[LoginFormKeys.Password]}
-                        onChange={changeHandler}
-                    />
-                    <input type="submit" className="btn submit" value="Login" />
-                    <p className="field">
-                        <span>If you don't have profile click <Link to="/registerUser">here</Link></span>
-                    </p>
+        //             <label htmlFor="login-pass">Password:</label>
+        //             <input
+        //                 type="password"
+        //                 id="login-password"
+        //                 name={LoginFormKeys.Password}
+        //                 value={values[LoginFormKeys.Password]}
+        //                 onChange={changeHandler}
+        //             />
+        //             <input type="submit" className="btn submit" value="Login" />
+        //             <p className="field">
+        //                 <span>If you don't have profile click <Link to="/registerUser">here</Link></span>
+        //             </p>
+        //         </div>
+        //     </form>
+        // </section>
+
+        <section>
+      <div className=".body-login">
+        <div className="center">
+          <div className="container">
+            <div className="text">Login Form Client</div>
+            <form id="login" method="POST" onSubmit={onSubmit}>
+              <div>
+                <div className="data">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Sokka@gmail.com"
+                    name={LoginFormKeys.Email}
+                    value={values[LoginFormKeys.Email]}
+                    onChange={changeHandler}
+                    required
+                  />
                 </div>
+                <div className="data">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    id="login-password"
+                    name={LoginFormKeys.Password}
+                    value={values[LoginFormKeys.Password]}
+                    onChange={changeHandler}
+                  />
+                </div>
+                <div className="btn">
+                  <input type="submit" className="inner" value="LOGIN" />
+                </div>
+                
+                <div className="signup-link">
+                  Not a client <Link to="/registerUser">Signup now</Link>
+                </div>
+              </div>
             </form>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
     )
 }
