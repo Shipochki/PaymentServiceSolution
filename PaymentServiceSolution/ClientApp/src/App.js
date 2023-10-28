@@ -13,6 +13,7 @@ import { AddProduct } from "./components/AddProduct/AddProduct";
 import { MyProducts } from "./components/MyProducts/MyProducts";
 import { useEffect, useState } from "react";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
+import { Checkout } from "./components/Checkout/Checkout";
 
 function App() {
   const navigate = useNavigate();
@@ -180,20 +181,33 @@ function App() {
     
   }
 
-  const createSesison = async (productFormKeys) => {
+  const addStripeCustomer = async (customerFromKeys) =>{
     try {
-      await fetch(`/api/Checkout/Create`, {
-      method:"POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(productFormKeys),
-    })
+      console.log(customerFromKeys)
+
+      const response = await fetch(`/api/Stripe/customer/add`, {
+        method: "POST", // GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors,cors, same-origin
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          'email': customerFromKeys.email,
+          'name': customerFromKeys.name,
+          'creditCard': {
+            'name': customerFromKeys.name,
+            'cardNumber': customerFromKeys.cardNumber,
+            'expirationYear': customerFromKeys.expirationYear,
+            'expirationMonth': customerFromKeys.expirationMonth,
+            'cvc': customerFromKeys.cvc
+          }
+        }),
+      });
+
+      const result = response.json();
     } catch (error) {
-      console.log("problem")
+      
     }
-    
   }
 
   useEffect(() => {
@@ -212,7 +226,7 @@ function App() {
     onLogout,
     onAddProductSubmit,
     getProductsByCompanyId,
-    createSesison
+    addStripeCustomer
   };
 
   return (
@@ -231,6 +245,7 @@ function App() {
             <Route path="/registerUser" element={<RegisterUser />} />
             <Route path="/registerCompany" element={<RegisterCompany />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/checkout" element={<Checkout />} />
             {localStorage.isCompany == "true" && (
               <Route path="/addProduct" element={<AddProduct />} />
             )}
