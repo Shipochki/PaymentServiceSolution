@@ -21,11 +21,13 @@ export const Header = () => {
                 Logout
               </Link>
               {localStorage.isCompany == "true" && (
-                <div>
-                  <Link className="addProduct-btn" to={"/addProduct"}>
+                 <div className="dropdown">
+                 <button className="dropbtn drop-login">Tools</button>
+                 <div className="dropdown-content">
+                   <Link className="addProduct-btn" to={"/addProduct"}>
                     Add Product
-                  </Link>
-                  <Link
+                   </Link>
+                   <Link
                     className="myProducts"
                     onClick={() => {
                       getProductsByCompanyId();
@@ -34,6 +36,7 @@ export const Header = () => {
                     My Products
                   </Link>
                 </div>
+                 </div> 
               )}
             </div>
           )}

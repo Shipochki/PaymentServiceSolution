@@ -1,7 +1,11 @@
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
+import "./myProducts.css"
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const MyProducts = ({products}) => {
+
     const footer = (
         <>
             <Button label="Save" icon="pi pi-check" />
@@ -11,7 +15,10 @@ export const MyProducts = ({products}) => {
 
     return (
       <section className="products">
-        <h1>My Products</h1>
+        <h1 className='myProducts-h1'>My Products</h1>
+        <div className='cards-container'>
+
+        </div>
 
         {products.map((x) => (
           <div className="card flex justify-content-center">

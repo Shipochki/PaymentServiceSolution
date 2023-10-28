@@ -26,5 +26,7 @@
 		public Company Company { get; set; } = null!;
 
 		public bool IsDeleted { get; set; } = false;
+
+		public string? ImageUrlLink { get; set; }
 	}
 }

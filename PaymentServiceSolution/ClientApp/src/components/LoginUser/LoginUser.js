@@ -52,7 +52,7 @@ export const LoginUser = () => {
         <section>
       <div className=".body-login">
         <div className="center">
-          <div className="container">
+          <div className="container-login">
             <div className="text">Login Form Client</div>
             <form id="login" method="POST" onSubmit={onSubmit}>
               <div>
@@ -61,7 +61,7 @@ export const LoginUser = () => {
                   <input
                     type="email"
                     id="email"
-                    placeholder="Sokka@gmail.com"
+                    placeholder="Enter your Email"
                     name={LoginFormKeys.Email}
                     value={values[LoginFormKeys.Email]}
                     onChange={changeHandler}

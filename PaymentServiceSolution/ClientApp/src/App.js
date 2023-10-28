@@ -11,12 +11,13 @@ import { Footer } from "./components/Footer/Footer";
 import { Logout } from "./components/Logout/Logout";
 import { AddProduct } from "./components/AddProduct/AddProduct";
 import { MyProducts } from "./components/MyProducts/MyProducts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 function App() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
 
   const onLoginCompanySubmit = async (loginFormKeys) => {
     try {
@@ -34,7 +35,7 @@ function App() {
       localStorage.setItem("id", result.id);
       localStorage.setItem("isCompany", result.isCompany);
 
-      navigate("/");
+      getProductsByCompanyId();
     } catch (error) {
       console.log("Login company problem");
     }
@@ -112,7 +113,7 @@ function App() {
       localStorage.setItem("id", result.id);
       localStorage.setItem("isCompany", result.isCompany);
 
-      navigate("/");
+      getProductsByCompanyId();
     } catch {
       console.log("RegisterUser problem");
     }
@@ -136,17 +137,20 @@ function App() {
       console.log("Problem with add product");
     }
 
-    navigate("/");
+    getProductsByCompanyId();
   };
 
   const getProductsByCompanyId = async () => {
     try {
       const companyId = localStorage.id;
 
-      const response = await fetch(`/api/product/GetProductsByCompanyId/${companyId}`, {
-        method: "GET", // GET, POST, PUT, DELETE, etc.
-        //body: JSON.stringify(companyId),
-      });
+      const response = await fetch(
+        `/api/product/GetProductsByCompanyId/${companyId}`,
+        {
+          method: "GET", // GET, POST, PUT, DELETE, etc.
+          //body: JSON.stringify(companyId),
+        }
+      );
 
       const result = await response.json();
 
@@ -157,6 +161,26 @@ function App() {
       console.log("Problem get products by company id");
     }
   };
+
+  const getAllProducts = async () => {
+    const response = await fetch(
+      `api/product/GetAll`,
+      {
+        method:"GET"
+      }
+    );
+
+    const result = await response.json();
+
+    setAllProducts(result);
+  }
+
+  useEffect(() => {
+    if (localStorage.isCompany == "true") {
+      getProductsByCompanyId();
+      getAllProducts();
+    }
+  }, []);
 
   const contextValues = {
     onLoginCompanySubmit,
@@ -175,6 +199,9 @@ function App() {
 
         <main id="main-content">
           <Routes>
+            {localStorage.isCompany == "true" && (
+              <Route path="/" element={<MyProducts products={products} />} />
+            )}
             <Route path="/" element={<Home />} />
             <Route path="/loginUser" element={<LoginUser />} />
             <Route path="/loginCompany" element={<LoginCompany />} />

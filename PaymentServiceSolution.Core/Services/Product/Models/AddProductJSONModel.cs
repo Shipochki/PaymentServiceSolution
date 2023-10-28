@@ -23,5 +23,8 @@
 
 		[JsonProperty("companyId")]
 		public int CompanyId { get; set; }
+
+		[JsonProperty("imageurllink")]
+		public string? ImageUrlLink { get; set; }
 	}
 }

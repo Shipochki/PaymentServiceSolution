@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PaymentServiceSolution.Core;
 
@@ -10,9 +11,10 @@ using PaymentServiceSolution.Core;
 namespace PaymentServiceSolution.Core.Migrations
 {
     [DbContext(typeof(PaymentServiceSolutionDbContext))]
-    partial class PaymentServiceSolutionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231028095210_AddImgerUrlLinkToProduct")]
+    partial class AddImgerUrlLinkToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

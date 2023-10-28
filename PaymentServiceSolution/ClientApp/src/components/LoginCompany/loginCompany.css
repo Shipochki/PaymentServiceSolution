@@ -23,7 +23,7 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.show-btn .container{
+.show-btn .container-login{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,7 +34,7 @@ input[type="checkbox"]{
     display: none;
 }
 
-.container{
+.container-login{
     background: #fff;
     width: 410px;
     padding: 30px;
@@ -43,11 +43,11 @@ input[type="checkbox"]{
     margin-top: 65px;
 }
 
-#show:checked ~ .container{
+#show:checked ~ .container-login{
     display: block;
 }
 
-.container .close-btn{
+.container-login .close-btn{
     position: absolute;
     right: 20px;
     top: 15px;
@@ -55,21 +55,21 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
-.container .close-btn:hover{
+.container-login .close-btn:hover{
     color: #3498db;
 }
 
-.container .text{
+.container-login .text{
     font-size: 35px;
     font-weight: 600;
     text-align: center;
 }
 
-.container form{
+.container-login form{
     margin-top: -20px;
 }
 
-.container form .data{
+.container-login form .data{
     height: 45px;
     width: 100%;
     margin: 40px 0;

@@ -31,6 +31,7 @@
 				Price = model.Price,
 				Description = model.Description,
 				CompanyId = model.CompanyId,
+				ImageUrlLink = model.ImageUrlLink,
 			};
 
 			await this._context.Products.AddAsync(product);
@@ -48,6 +49,7 @@
 					Name = p.Name,
 					Price = p.Price,
 					Description = p.Description,
+					ImageUrlLink = p.ImageUrlLink == null ? p.ImageUrlLink : "https://actogmbh.com/files/no-product-image.png",
 				})
 				.ToListAsync();
 
