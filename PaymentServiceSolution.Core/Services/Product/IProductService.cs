@@ -9,5 +9,7 @@
 		public Task<List<ProductModel>> GetAllProductsByCompanyId(int id);
 
 		public Task<List<ProductModel>> GetAllProducts();
+
+		public Task<List<ProductModel>> GetProductsByCompany(string text);
 	}
 }

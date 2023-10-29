@@ -4,6 +4,7 @@ import "./checkout.css"
 import { AuthContext } from "../../contexts/AuthContext"
 import { useForm } from "../../hooks/useForm"
 
+
 const customerFromKeys = {
     Email: 'email',
     Name: 'name',
@@ -34,7 +35,7 @@ export const Checkout = () => {
       <section>
         <div className="row">
           <div className="col-75">
-            <div className="container">
+            <div className="container cont">
               <form id="checkout" onSubmit={onSubmit} method="POST">
                 <div className="row">
                   <div className="col-50">
@@ -169,7 +170,7 @@ export const Checkout = () => {
                   <input type="checkbox" name="sameadr">
                   </input>
                 </label>
-                <input type="submit" value="Continue to checkout" className="btn" />
+                <input type="submit" value="Continue to checkout" className="btnCheck " />
               </form>
             </div>
           </div>

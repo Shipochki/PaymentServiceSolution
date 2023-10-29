@@ -7,6 +7,10 @@ img{
     margin-right: 30px;
 }
 
+p{
+  font-size: 12px;
+}
+
 .card {
     --font-color: #323232;
     --font-color-sub: #666;
@@ -14,7 +18,7 @@ img{
     --main-color: #323232;
     --main-focus: #2d8cf0;
     width: 230px;
-    height: 300px;
+    height: 350px;
     background: var(--bg-color);
     border: 2px solid var(--main-color);
     box-shadow: 4px 4px var(--main-color);

@@ -1,3 +1,9 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.cont{
+  margin-top: 60px;
+}
+
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;
@@ -53,7 +59,7 @@
     font-size: 24px;
   }
   
-  .btn {
+  .btnCheck {
     background-color: #04AA6D;
     color: white;
     padding: 12px;
@@ -65,7 +71,7 @@
     font-size: 17px;
   }
   
-  .btn:hover {
+  .btnCheck:hover {
     background-color: #45a049;
   }
   

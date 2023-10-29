@@ -149,7 +149,6 @@ function App() {
         `/api/product/GetProductsByCompanyId/${companyId}`,
         {
           method: "GET", // GET, POST, PUT, DELETE, etc.
-          //body: JSON.stringify(companyId),
         }
       );
 
@@ -210,6 +209,30 @@ function App() {
     }
   }
 
+  const onSearchCompnay = async (searchFormhKeys) => {
+    try {
+      const text = searchFormhKeys.text;
+
+      console.log(text);
+
+      const response = await fetch(
+      `/api/product/GetProductsByCompany/${text}`,
+      {
+        method: "GET", // GET, POST, PUT, DELETE, etc.
+      }
+    );
+
+    const result = await response.json();
+
+  setAllProducts(result)
+
+  navigate('/')
+    } catch (error) {
+      console.log("problem with getprod")
+    }
+    
+  }
+
   useEffect(() => {
     getAllProducts();
 
@@ -226,7 +249,8 @@ function App() {
     onLogout,
     onAddProductSubmit,
     getProductsByCompanyId,
-    addStripeCustomer
+    addStripeCustomer,
+    onSearchCompnay
   };
 
   return (
