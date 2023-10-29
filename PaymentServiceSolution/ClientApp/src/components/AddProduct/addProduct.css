@@ -1,0 +1,14 @@
+#desc{
+    width: 100%;
+    height: 140px;
+}
+
+#price{
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+}
+
+#addProd{
+    margin-top: 40px;
+}

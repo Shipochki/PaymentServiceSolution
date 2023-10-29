@@ -213,8 +213,6 @@ function App() {
     try {
       const text = searchFormhKeys.text;
 
-      console.log(text);
-
       const response = await fetch(
       `/api/product/GetProductsByCompany/${text}`,
       {

@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PaymentServiceSolution.Core.Services.Company;
-using PaymentServiceSolution.Core.Services.Company.Models;
-
-namespace PaymentServiceSolution.Controllers
+﻿namespace PaymentServiceSolution.Controllers
 {
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Mvc;
+	using PaymentServiceSolution.Core.Services.Company;
+	using PaymentServiceSolution.Core.Services.Company.Models;
+
+
 	[Route("api/[controller]")]
 	[ApiController]
 	public class CompanyController : ControllerBase

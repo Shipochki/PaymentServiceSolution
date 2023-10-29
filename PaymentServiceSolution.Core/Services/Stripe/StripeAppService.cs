@@ -1,13 +1,9 @@
 ﻿using PaymentServiceSolution.Core.Models.Stripe;
 using Stripe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PaymentServiceSolution.Core.Services.Stripe
 {
+
 	public class StripeAppService : IStripeAppService
 	{
 		private readonly ChargeService _chargeService;

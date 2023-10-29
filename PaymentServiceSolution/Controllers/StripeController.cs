@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PaymentServiceSolution.Core.Models.Stripe;
-using PaymentServiceSolution.Core.Services.Stripe;
-
-namespace PaymentServiceSolution.Controllers
+﻿namespace PaymentServiceSolution.Controllers
 {
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Mvc;
+	using PaymentServiceSolution.Core.Models.Stripe;
+	using PaymentServiceSolution.Core.Services.Stripe;
+
 	[Route("api/[controller]")]
 	public class StripeController : Controller
 	{

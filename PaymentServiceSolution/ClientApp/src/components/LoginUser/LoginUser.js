@@ -23,7 +23,7 @@ export const LoginUser = () => {
       <div className=".body-login">
         <div className="center">
           <div className="container-login">
-            <div className="text">Login Form Client</div>
+            <div className="text">Login Client</div>
             <form id="login" method="POST" onSubmit={onSubmit}>
               <div>
                 <div className="data">

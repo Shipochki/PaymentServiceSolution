@@ -25,7 +25,7 @@ export const LoginCompany = () => {
       <div className=".body-login">
         <div className="center">
           <div className="container-login">
-            <div className="text">Login Form Company</div>
+            <div className="text">Login Company</div>
             <form id="login" method="POST" onSubmit={onSubmit}>
               <div>
                 <div className="data">

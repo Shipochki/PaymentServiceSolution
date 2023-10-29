@@ -9,7 +9,8 @@ export const Header = () => {
   return (
     <header>
       <h1>
-        <Link className="site-name" to={"/"}>
+        <Link onClick={() => {
+          window.location.reload()}} className="site-name" to={"/"}>
         PaymentServiceSolution
         </Link>
       </h1>

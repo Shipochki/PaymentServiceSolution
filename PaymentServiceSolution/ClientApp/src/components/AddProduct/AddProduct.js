@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 
+import "./addProduct.css"
+
 const AddProductFromKeys = {
   Name: "name",
   ImageUrlLink: "imageurllink",
@@ -27,7 +29,7 @@ export const AddProduct = () => {
   return (
     <section id="add-product" className="sction-product">
       <form id="addProduct" method="post" onSubmit={onSubmit}>
-        <div className="container">
+        <div className="container" id="addProd">
           <h1>Add Product</h1>
 
           <label htmlFor="text">Name:</label>
