@@ -34,8 +34,7 @@ namespace PaymentServiceSolution
 			services
 				.AddScoped<CustomerService>()
 				.AddScoped<ChargeService>()
-				.AddScoped<TokenService>()
-				.AddScoped<IStripeAppService, StripeAppService>();
+				.AddScoped<TokenService>();
 
 
 

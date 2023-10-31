@@ -13,5 +13,7 @@
 		public string? CompanyName { get; set; }
 
 		public string? ImageUrlLink { get; set; }
+
+		public string? PaymentLink { get; set; }
 	}
 }

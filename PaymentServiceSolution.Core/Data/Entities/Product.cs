@@ -28,5 +28,7 @@
 		public bool IsDeleted { get; set; } = false;
 
 		public string? ImageUrlLink { get; set; }
+
+		public string? PaymentLink { get; set; }
 	}
 }

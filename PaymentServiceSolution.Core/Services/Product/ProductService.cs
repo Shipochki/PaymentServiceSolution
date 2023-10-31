@@ -1,11 +1,13 @@
 ﻿namespace PaymentServiceSolution.Core.Services.Product
 {
+	using Stripe;
 	using Microsoft.EntityFrameworkCore;
 	using Newtonsoft.Json;
 	using PaymentServiceSolution.Core.Data.Entities;
 	using PaymentServiceSolution.Core.Services.Product.Models;
 	using System.Collections.Generic;
 	using static PaymentServiceSolution.Core.Common.Validation;
+	using static PaymentServiceSolution.Core.Services.Stripe.StripeAppService;
 
 	public class ProductService : IProductService
 	{
@@ -34,6 +36,10 @@
 				ImageUrlLink = model.ImageUrlLink,
 			};
 
+			string result = CreateProduct(product);
+
+			product.PaymentLink = result;
+
 			await this._context.Products.AddAsync(product);
 			await this._context.SaveChangesAsync();
 		}
@@ -52,6 +58,7 @@
 					CompanyName = p.Company.Name,
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					PaymentLink = p.PaymentLink,
 				})
 				.ToListAsync();
 
@@ -71,7 +78,8 @@
 					Price = p.Price,
 					CompanyName = p.Company.Name,
 					Description = p.Description,
-					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink 
+					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					PaymentLink = p.PaymentLink,
 				})
 				.ToListAsync();
 
@@ -91,7 +99,8 @@
 					Price = p.Price,
 					CompanyName = p.Company.Name,
 					Description = p.Description,
-					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink
+					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					PaymentLink = p.PaymentLink,
 				})
 				.ToListAsync();
 
