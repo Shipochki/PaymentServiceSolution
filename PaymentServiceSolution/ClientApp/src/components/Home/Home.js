@@ -8,7 +8,7 @@ const searchFormhKeys ={
   Text: "text"
 }
 
-export const Home = ({allProducts}) => {
+export const Home = () => {
   const {onSearchCompnay} = useContext(AuthContext);
   const {values, changeHandler, onSubmit }= useForm(
     {
@@ -30,11 +30,6 @@ export const Home = ({allProducts}) => {
 
           <input id="btn" className="btn submit" type="submit" />
         </form>
-      </div>
-      <div className="home">
-        {allProducts.map((x) => (
-          <Product key={x.id} {...x} />
-        ))}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@
 	using System.Collections.Generic;
 	using static PaymentServiceSolution.Core.Common.Validation;
 	using static PaymentServiceSolution.Core.Services.Stripe.StripeAppService;
+	using static System.Net.Mime.MediaTypeNames;
 
 	public class ProductService : IProductService
 	{
@@ -59,6 +60,8 @@
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
 					PaymentLink = p.PaymentLink,
+					IsSoldOut = p.IsSoldOut,
+					QuantitySold = p.QuantitySold
 				})
 				.ToListAsync();
 
@@ -80,6 +83,8 @@
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
 					PaymentLink = p.PaymentLink,
+					IsSoldOut = p.IsSoldOut,
+					QuantitySold = p.QuantitySold
 				})
 				.ToListAsync();
 
@@ -101,10 +106,36 @@
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
 					PaymentLink = p.PaymentLink,
+					IsSoldOut = p.IsSoldOut,
+					QuantitySold = p.QuantitySold
 				})
 				.ToListAsync();
 
 			return products;
+		}
+
+		public async Task<List<ProductModel>> GetTop3BestSellers()
+		{
+			List<ProductModel> products = await this._context
+			.Products
+			.Include(p => p.Company)
+				.Where(p => p.IsDeleted == false)
+				.Select(p => new ProductModel()
+				{
+					Id = p.Id,
+					Name = p.Name,
+					Price = p.Price,
+					CompanyName = p.Company.Name,
+					Description = p.Description,
+					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					PaymentLink = p.PaymentLink,
+					IsSoldOut = p.IsSoldOut,
+					QuantitySold = p.QuantitySold
+				})
+				.OrderByDescending(p => p.QuantitySold)
+				.ToListAsync();
+
+			return (List<ProductModel>)products.Take(3);
 		}
 	}
 }

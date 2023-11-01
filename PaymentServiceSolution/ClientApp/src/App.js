@@ -14,11 +14,13 @@ import { MyProducts } from "./components/MyProducts/MyProducts";
 import { useEffect, useState } from "react";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { Checkout } from "./components/Checkout/Checkout";
+import { Catalog } from "./components/Catalog/Catalog";
 
 function App() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [topProducts, setTopProducts] = useState([]);
 
   const onLoginCompanySubmit = async (loginFormKeys) => {
     try {
@@ -174,6 +176,8 @@ function App() {
     const result = await response.json();
 
     setAllProducts(result);
+
+    navigate('/catalog')
     } catch (error) {
       console.log("Problem with get all")
     }
@@ -224,15 +228,30 @@ function App() {
 
   setAllProducts(result)
 
-  navigate('/')
+  navigate('/catalog')
     } catch (error) {
       console.log("problem with getprod")
     }
     
   }
 
+  const getTop3Products = async () => {
+    try {
+      const response = await fetch(`/api/product/GetTop3`,
+      {
+        method:"GET",
+      });
+
+      const result = await response.json();
+
+      setTopProducts(result);
+    } catch (error) {
+      
+    }
+  }
+
   useEffect(() => {
-    getAllProducts();
+    getTop3Products();
 
     if (localStorage.isCompany == "true") {
       getProductsByCompanyId();
@@ -248,7 +267,8 @@ function App() {
     onAddProductSubmit,
     getProductsByCompanyId,
     addStripeCustomer,
-    onSearchCompnay
+    onSearchCompnay,
+    getAllProducts
   };
 
   return (
@@ -261,13 +281,14 @@ function App() {
             {localStorage.isCompany == "true" && (
               <Route path="/" element={<MyProducts products={products} />} />
             )}
-            <Route path="/" element={<Home allProducts={allProducts}/>} />
+            <Route path="/" element={<Home topProducts={topProducts}/>} />
             <Route path="/loginUser" element={<LoginUser />} />
             <Route path="/loginCompany" element={<LoginCompany />} />
             <Route path="/registerUser" element={<RegisterUser />} />
             <Route path="/registerCompany" element={<RegisterCompany />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/catalog" element={<Catalog allProducts={allProducts}/>} />
             {localStorage.isCompany == "true" && (
               <Route path="/addProduct" element={<AddProduct />} />
             )}

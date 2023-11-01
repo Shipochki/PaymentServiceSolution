@@ -15,5 +15,9 @@
 		public string? ImageUrlLink { get; set; }
 
 		public string? PaymentLink { get; set; }
+
+		public bool IsSoldOut { get; set; }
+
+		public int QuantitySold { get; set; }
 	}
 }

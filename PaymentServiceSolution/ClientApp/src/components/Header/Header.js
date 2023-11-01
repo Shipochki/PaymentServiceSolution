@@ -5,17 +5,25 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export const Header = () => {
-  const { getProductsByCompanyId } = useContext(AuthContext);
+  const { getProductsByCompanyId, getAllProducts } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
     <header>
-        
-        <div className="logo-img" onClick={() => {navigate('/')}}></div>
+        <div className="div-logo-text" onClick={() => {navigate('/')}}>
+      <div className="logo-img" ></div>      
+      <p className="name-site">Literaty Lights</p>    
+        </div>
+
         
       <nav>
         <div className="log-sign-btns">
           {localStorage.getItem("id") && (
             <div>
+              <button className="catalog-btn" onClick={() => {
+                getAllProducts()
+              }}>
+                Catalog
+              </button>
               <Link className="logout-btn" to={"/logout"}>
                 Logout
               </Link>

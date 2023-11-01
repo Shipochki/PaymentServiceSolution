@@ -11,5 +11,7 @@
 		public Task<List<ProductModel>> GetAllProducts();
 
 		public Task<List<ProductModel>> GetProductsByCompany(string text);
+
+		public Task<List<ProductModel>> GetTop3BestSellers();
 	}
 }

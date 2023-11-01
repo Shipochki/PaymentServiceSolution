@@ -1,16 +1,26 @@
 header{
     display: flex;
     box-shadow: 0px 0px 16px #888888;
-    height: 90px;
+    height: 115px;
+}
+
+.name-site{
+  margin-left: 20px;
+  font-size: 16px;
+  color: #9b59b6;
 }
 
 .logo-img{
   background-image: url('./logo_200x200-1.png');
   width: 85px;
-  height: 85px;
+  height: 65px;
   background-size: 85px;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-top: 10px;
+}
+
+.div-logo-text:hover{
+  cursor: pointer;
 }
 
 header h1{
@@ -27,7 +37,8 @@ h1 a{
 
 header nav{
     padding: 15px 0 0 0;
-    margin-left: 67%;
+    margin-left: 75%;
+    margin-top: 10px;
 }
 
 nav a{

@@ -47,5 +47,13 @@
 			List<ProductModel> products = await this._productService.GetProductsByCompany(text);
 			return Ok(products);
 		}
+
+		[HttpGet]
+		[Route("[action]")]
+		public async Task<IActionResult> GetTop3()
+		{
+			List<ProductModel> products = await _productService.GetTop3BestSellers();
+			return Ok(products);
+		}
 	}
 }
