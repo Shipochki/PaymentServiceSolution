@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./header.css";
 import { useContext } from "react";
@@ -6,14 +6,12 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 export const Header = () => {
   const { getProductsByCompanyId } = useContext(AuthContext);
+  const navigate = useNavigate();
   return (
     <header>
-      <h1>
-        <Link onClick={() => {
-          window.location.reload()}} className="site-name" to={"/"}>
-        PaymentServiceSolution
-        </Link>
-      </h1>
+        
+        <div className="logo-img" onClick={() => {navigate('/')}}></div>
+        
       <nav>
         <div className="log-sign-btns">
           {localStorage.getItem("id") && (

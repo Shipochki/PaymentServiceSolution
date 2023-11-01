@@ -4,6 +4,15 @@ header{
     height: 90px;
 }
 
+.logo-img{
+  background-image: url('./logo_200x200-1.png');
+  width: 85px;
+  height: 85px;
+  background-size: 85px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
 header h1{
     margin-left: 3%;
     height: 70px;
