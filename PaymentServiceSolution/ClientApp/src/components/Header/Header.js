@@ -17,13 +17,14 @@ export const Header = () => {
         
       <nav>
         <div className="log-sign-btns">
-          {localStorage.getItem("id") && (
-            <div>
-              <button className="catalog-btn" onClick={() => {
+          <button className="catalog-btn" onClick={() => {
                 getAllProducts()
               }}>
                 Catalog
               </button>
+          {localStorage.getItem("id") && (
+            <div className="div-btns">
+              
               <Link className="logout-btn" to={"/logout"}>
                 Logout
               </Link>
@@ -51,24 +52,13 @@ export const Header = () => {
           {!localStorage.getItem("id") && (
             <div>
               <div className="dropdown">
-                <button className="dropbtn drop-login">Login</button>
+                <button className="dropbtn drop-login">Sign in</button>
                 <div className="dropdown-content">
                   <Link className="login-btn" to={"/loginUser"}>
                     Login as Client
                   </Link>
                   <Link className="login-btn" to={"/loginCompany"}>
                     Login as Company
-                  </Link>
-                </div>
-              </div>
-              <div className="dropdown">
-                <button className="dropbtn drop-register">Register</button>
-                <div className="dropdown-content">
-                  <Link className="register-btn" to={"/registerUser"}>
-                    Register as Client
-                  </Link>
-                  <Link className="register-btn" to={"/registerCompany"}>
-                    Register as Company
                   </Link>
                 </div>
               </div>

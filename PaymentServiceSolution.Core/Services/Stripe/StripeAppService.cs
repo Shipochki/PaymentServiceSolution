@@ -27,6 +27,15 @@ namespace PaymentServiceSolution.Core.Services.Stripe
 					{
 						new PaymentLinkLineItemOptions { Price = price, Quantity = 1 },
 					},
+				AfterCompletion = new PaymentLinkAfterCompletionOptions
+					{
+						Type = "redirect",
+						Redirect = new PaymentLinkAfterCompletionRedirectOptions
+							{
+								Url = "https://localhost:42424/success"
+							},
+					},
+				
 			};
 
 			var linkService = new PaymentLinkService();

@@ -2,6 +2,7 @@ header{
     display: flex;
     box-shadow: 0px 0px 16px #888888;
     height: 115px;
+    background: rgba(0,0,0,0.7)
 }
 
 .name-site{
@@ -23,6 +24,28 @@ header{
   cursor: pointer;
 }
 
+.catalog-btn{
+  border-radius: 50px;
+  width: 100px;
+  font-size: 16px;
+  background: transparent;
+  color: white;
+  border: 0;
+}
+
+.div-btns{
+  margin-left: 25px;
+}
+
+.catalog-btn:hover{
+  background-color: white;
+  color: black;
+}
+
+.log-sign-btns{
+  display: flex;
+}
+
 header h1{
     margin-left: 3%;
     height: 70px;
@@ -37,7 +60,7 @@ h1 a{
 
 header nav{
     padding: 15px 0 0 0;
-    margin-left: 75%;
+    margin-left: 65%;
     margin-top: 10px;
 }
 
@@ -78,16 +101,27 @@ nav a svg{
   
   .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 12px 0 12px 12px;
     text-decoration: none;
     display: block;
+    width: 195px;
   }
   
   
   .dropdown:hover .dropdown-content {display: block;}
 
   .drop-login{
-    background: linear-gradient( #56d8e4, #9f01ea);
+    border-radius: 50px;
+  width: 100px;
+  font-size: 16px;
+  background: transparent;
+  color: white;
+  margin-left: 20px;
+  }
+
+  .drop-login:hover{
+    color: black;
+    background: white;
   }
 
   .drop-register{
