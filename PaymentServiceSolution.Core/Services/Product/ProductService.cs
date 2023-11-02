@@ -135,7 +135,7 @@
 				.OrderByDescending(p => p.QuantitySold)
 				.ToListAsync();
 
-			return (List<ProductModel>)products.Take(3);
+			return new List<ProductModel>(products.Take(3));
 		}
 	}
 }

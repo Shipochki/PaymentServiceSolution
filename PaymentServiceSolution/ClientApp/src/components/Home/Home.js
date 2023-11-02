@@ -1,14 +1,17 @@
-import { Product } from "../Product/Product";
+import { HomeProduct } from "./HomeProduct/HomeProduct.js";
 import "./home.css"
 
 export const Home = ({topProducts}) => {
 
   return (
-    <div>
+    <div className="main-home">
+      <div>
+      <h1>Best Sellers</h1>
       <div className="top3">
-      {topProducts.map((x) => (
-          <Product key={x.id} {...x} />
+      {topProducts.map((x, i) => (
+          <HomeProduct key={x.id} {...x} />
         ))}
+      </div>
       </div>
     </div>
   );

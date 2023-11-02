@@ -27,7 +27,7 @@ header{
 .catalog-btn{
   border-radius: 50px;
   width: 100px;
-  font-size: 16px;
+  font-size: 20px;
   background: transparent;
   color: white;
   border: 0;
@@ -66,8 +66,8 @@ header nav{
 
 nav a{
     text-decoration: none;
-    font-size: 1.2rem;
-    color: black;
+    color: white;
+    font-size: 20px;
     margin-right: 40px;
 }
 
@@ -112,11 +112,11 @@ nav a svg{
 
   .drop-login{
     border-radius: 50px;
-  width: 100px;
-  font-size: 16px;
-  background: transparent;
-  color: white;
-  margin-left: 20px;
+    width: 100px;
+    font-size: 20px;
+    background: transparent;
+    color: white;
+    margin-left: 20px;
   }
 
   .drop-login:hover{
