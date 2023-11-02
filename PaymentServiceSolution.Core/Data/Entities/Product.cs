@@ -29,6 +29,9 @@
 
 		public string? ImageUrlLink { get; set; }
 
+		public string? BookCoverBackImg { get; set; }
+
+
 		public string? PaymentLink { get; set; }
 
 		public int Amount { get; set; }

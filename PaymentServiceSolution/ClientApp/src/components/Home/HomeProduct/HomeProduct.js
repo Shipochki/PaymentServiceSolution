@@ -1,3 +1,6 @@
+
+import './homeProduct.css'
+
 export const HomeProduct = ({imageUrlLink, name, description, companyName}) => {
     return (
         <div className="home-card-prod">

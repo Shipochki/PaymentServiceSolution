@@ -24,5 +24,42 @@
     font-size: 60px;
     color: #9b59b6;
     font-family: serif;
-    text-shadow: 10px 12px 9px white
+    text-shadow: 10px 12px 9px white;
+    display: flex;
+    justify-content: center;
+}
+
+.home-div{
+    width: 100%;
+}
+
+.top3{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.prod-container:nth-child(2){
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prod-container:nth-child(2) .home-card-prod{
+    flex-direction: row-reverse;
+    margin-right: 60px;
+}
+
+.prod-container:nth-child(2) .home-card-prod .home-card-info{
+    width: 34%;
+}
+
+.prod-container:nth-child(2) .home-card-prod .home-card-title{
+    width: 300px;
+}
+
+.prod-container:nth-child(2) .home-card-prod .home-card-desc{
+    width: 94%;
+}
+
+.prod-container:nth-child(2) .home-card-prod .home-card-compName{
+    width: 280px;
 }

@@ -1,0 +1,34 @@
+.home-card-prod{
+    display: flex;
+    width: 40%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.home-card-prod img{
+    width: 250px;
+    height: 360px;
+}
+
+.home-card-info{
+    padding-left: 35px;
+    padding-top: 65px;
+}
+
+.home-card-title{
+    font-size: 26px;
+    font-family: cursive;
+}
+
+.home-card-desc{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 33%;
+    font-family: cursive;
+}
+
+.home-card-compName{
+    font-size: 22px;
+    margin-top: 50px;
+    font-family: cursive;
+}
