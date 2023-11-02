@@ -26,5 +26,8 @@
 
 		[JsonProperty("imageurllink")]
 		public string? ImageUrlLink { get; set; }
-	}
+
+		[JsonProperty("bookcoverback")]
+		public string? BookCoverBackImg { get; set; }
+}
 }

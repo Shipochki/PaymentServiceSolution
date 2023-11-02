@@ -35,6 +35,7 @@
 				Description = model.Description,
 				CompanyId = model.CompanyId,
 				ImageUrlLink = model.ImageUrlLink,
+				BookCoverBackImg = model.BookCoverBackImg,
 			};
 
 			string result = CreateProduct(product);
@@ -59,6 +60,7 @@
 					CompanyName = p.Company.Name,
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					BookCoverBackImg = p.BookCoverBackImg == null ? "https://actogmbh.com/files/no-product-image.png" : p.BookCoverBackImg,
 					PaymentLink = p.PaymentLink,
 					IsSoldOut = p.IsSoldOut,
 					QuantitySold = p.QuantitySold
@@ -82,6 +84,7 @@
 					CompanyName = p.Company.Name,
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					BookCoverBackImg = p.BookCoverBackImg == null ? "https://actogmbh.com/files/no-product-image.png" : p.BookCoverBackImg,
 					PaymentLink = p.PaymentLink,
 					IsSoldOut = p.IsSoldOut,
 					QuantitySold = p.QuantitySold
@@ -105,6 +108,7 @@
 					CompanyName = p.Company.Name,
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					BookCoverBackImg = p.BookCoverBackImg == null ? "https://actogmbh.com/files/no-product-image.png" : p.BookCoverBackImg,
 					PaymentLink = p.PaymentLink,
 					IsSoldOut = p.IsSoldOut,
 					QuantitySold = p.QuantitySold
@@ -128,6 +132,7 @@
 					CompanyName = p.Company.Name,
 					Description = p.Description,
 					ImageUrlLink = p.ImageUrlLink == null ? "https://actogmbh.com/files/no-product-image.png" : p.ImageUrlLink,
+					BookCoverBackImg = p.BookCoverBackImg == null ? "https://actogmbh.com/files/no-product-image.png" : p.BookCoverBackImg,
 					PaymentLink = p.PaymentLink,
 					IsSoldOut = p.IsSoldOut,
 					QuantitySold = p.QuantitySold

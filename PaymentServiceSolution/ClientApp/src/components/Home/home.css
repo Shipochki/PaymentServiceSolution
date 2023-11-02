@@ -45,11 +45,12 @@
 
 .prod-container:nth-child(2) .home-card-prod{
     flex-direction: row-reverse;
-    margin-right: 60px;
+    margin-right: 190px;
 }
 
 .prod-container:nth-child(2) .home-card-prod .home-card-info{
-    width: 34%;
+    width: 27%;
+    margin-right: 40px;
 }
 
 .prod-container:nth-child(2) .home-card-prod .home-card-title{
@@ -57,7 +58,7 @@
 }
 
 .prod-container:nth-child(2) .home-card-prod .home-card-desc{
-    width: 94%;
+    width: 85%;
 }
 
 .prod-container:nth-child(2) .home-card-prod .home-card-compName{

@@ -10,6 +10,7 @@ const AddProductFromKeys = {
   Description: "description",
   Price: "price",
   CompanyId: "companyid",
+  BookCoverBack: "bookcoverback"
 };
 
 export const AddProduct = () => {
@@ -22,6 +23,7 @@ export const AddProduct = () => {
       [AddProductFromKeys.ImageUrlLink]: "",
       [AddProductFromKeys.Price]: "",
       [AddProductFromKeys.CompanyId]: localStorage.id,
+      [AddProductFromKeys.BookCoverBack]: "",
     },
     onAddProductSubmit
   );
@@ -48,6 +50,15 @@ export const AddProduct = () => {
             id="imageUrlLink"
             name={AddProductFromKeys.ImageUrlLink}
             value={values[AddProductFromKeys.ImageUrlLink]}
+            onChange={changeHandler}
+          />
+
+          <label htmlFor="text">BookCoverBackLink:</label>
+          <input
+            type="text"
+            id="bookcoverback"
+            name={AddProductFromKeys.BookCoverBack}
+            value={values[AddProductFromKeys.BookCoverBack]}
             onChange={changeHandler}
           />
 

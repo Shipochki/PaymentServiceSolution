@@ -14,6 +14,8 @@
 
 		public string? ImageUrlLink { get; set; }
 
+		public string? BookCoverBackImg { get; set; }
+
 		public string? PaymentLink { get; set; }
 
 		public bool IsSoldOut { get; set; }
