@@ -17,6 +17,10 @@
 .main-home{
     justify-content: center;
     display: flex;
+    background-image: url(https://wallpapers.com/images/featured/book-5q6xbfxwtbme5kaj.jpg);
+  background-size: 2300px;
+  background-color: rgba(255,255,255,0.1);
+  background-blend-mode: lighten;
 }
 
 .main-home h1{

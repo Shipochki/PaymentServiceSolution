@@ -25,7 +25,7 @@ export const RegisterCompany = () => {
   );
 
   return (
-    <section className="body-register">
+    <section className="body-register-comp">
       <div class="container">
         <div class="title">Registration Company</div>
         <div class="content">

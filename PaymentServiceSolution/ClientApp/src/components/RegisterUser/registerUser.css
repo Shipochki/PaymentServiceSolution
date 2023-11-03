@@ -6,10 +6,10 @@
   font-family: 'Poppins',sans-serif;
 }
 .body-register{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 10px;
+  background-image: url('https://img.freepik.com/premium-photo/abstract-digital-communication_34629-318.jpg');
+    background-size: 2000px;
+    height: 840px;
+    padding-top: 120px;
 }
 .container{
   max-width: 700px;

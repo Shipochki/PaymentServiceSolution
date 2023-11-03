@@ -5,11 +5,11 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
-.body-register{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 10px;
+.body-register-comp{
+  padding-top: 120px;
+  background-image: url('https://img.freepik.com/free-vector/realistic-style-technology-particle-background_23-2148426704.jpg');
+    background-size: 2000px;
+    height: 840px;
 }
 .container{
   max-width: 700px;

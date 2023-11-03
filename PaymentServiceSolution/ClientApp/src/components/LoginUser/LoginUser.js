@@ -19,7 +19,7 @@ export const LoginUser = () => {
 
     return(
     
-        <section>
+        <section className="login-main">
       <div className=".body-login">
         <div className="center">
           <div className="container-login">

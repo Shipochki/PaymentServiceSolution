@@ -17,7 +17,7 @@ export const Catalog = ({allProducts}) => {
     }, onSearchCompnay
   )
     return (
-      <div>
+      <div className="catalog-main">
         <div className="search">
           <form id="seacrch" method="POST" onSubmit={onSubmit}>
             <input

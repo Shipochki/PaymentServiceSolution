@@ -21,7 +21,7 @@ export const LoginCompany = () => {
   );
 
   return (
-    <section>
+    <section className="main-login-comp">
       <div className=".body-login">
         <div className="center">
           <div className="container-login">

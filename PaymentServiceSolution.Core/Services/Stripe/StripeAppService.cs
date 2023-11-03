@@ -32,7 +32,7 @@ namespace PaymentServiceSolution.Core.Services.Stripe
 						Type = "redirect",
 						Redirect = new PaymentLinkAfterCompletionRedirectOptions
 							{
-								Url = "https://localhost:42424/success"
+								Url = "https://localhost:44479/success"
 							},
 					},
 				
