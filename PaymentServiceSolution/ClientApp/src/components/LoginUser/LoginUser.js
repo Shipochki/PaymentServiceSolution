@@ -43,6 +43,7 @@ export const LoginUser = () => {
                   <input
                     type="password"
                     id="login-password"
+                    placeholder="********"
                     name={LoginFormKeys.Password}
                     value={values[LoginFormKeys.Password]}
                     onChange={changeHandler}

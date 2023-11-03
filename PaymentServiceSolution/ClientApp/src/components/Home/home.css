@@ -4,16 +4,6 @@
     justify-content: center;
 }
 
-#text{
-    width: 15%;
-    margin-top: 20px;
-    margin-left: 40%;
-}
-
-#btn{
-    width: 4%;
-}
-
 .main-home{
     justify-content: center;
     display: flex;
