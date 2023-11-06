@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { Checkout } from "./components/Checkout/Checkout";
 import { Catalog } from "./components/Catalog/Catalog";
+import { Success } from "./components/Success/Success.js";
 
 function App() {
   const navigate = useNavigate();
@@ -289,6 +290,7 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/catalog" element={<Catalog allProducts={allProducts}/>} />
+            <Route path="/success" element={<Success />} />
             {localStorage.isCompany == "true" && (
               <Route path="/addProduct" element={<AddProduct />} />
             )}

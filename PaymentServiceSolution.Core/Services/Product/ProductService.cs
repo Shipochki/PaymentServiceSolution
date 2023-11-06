@@ -123,7 +123,7 @@
 			List<ProductModel> products = await this._context
 			.Products
 			.Include(p => p.Company)
-				.Where(p => p.IsDeleted == false)
+				.Where(p => p.IsDeleted == false && p.Id == 11 || p.Id == 12 || p.Id == 13)
 				.Select(p => new ProductModel()
 				{
 					Id = p.Id,

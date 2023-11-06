@@ -9,10 +9,7 @@ export const Product = ({imageUrlLink, name, description, price, companyName, pa
               <img src={imageUrlLink}/>
             </div>
             <div class="card-title">{name}</div>
-            <div class="card-subtitle">
-              {description}
-            </div>
-            <p>{companyName}</p>
+            <p>Publisher: {companyName}</p>
             <hr class="card-divider" />
             <div class="card-footer">
               <div class="card-price">

@@ -1,0 +1,9 @@
+.video{
+    box-shadow: 12px 12px 30px black;
+}
+
+.success-main{
+    justify-content: center;
+    display: flex;
+    padding: 65px;
+}

@@ -55,10 +55,10 @@ export const Header = () => {
                 <button className="dropbtn drop-login">Sign in</button>
                 <div className="dropdown-content">
                   <Link className="login-btn" to={"/loginUser"}>
-                    Login as Client
+                    Client
                   </Link>
                   <Link className="login-btn" to={"/loginCompany"}>
-                    Login as Company
+                    Company
                   </Link>
                 </div>
               </div>
