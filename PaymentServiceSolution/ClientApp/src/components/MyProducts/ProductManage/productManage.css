@@ -1,0 +1,77 @@
+.prod-mana{
+    width: 500px;
+    height: 250px;
+    margin-right: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    border-radius: 32px;
+}
+
+.prod-img{
+    padding: 20px;
+}
+
+.right-side-prod{
+    padding: 20px;
+}
+
+.right-side-prod h3{
+    display: flex;
+    justify-content: center;
+}
+
+.prod-mana-btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.prod-mana-btns button{
+    margin-top: 20px;
+    border-radius: 32px;
+    border: 0;
+    width: 250px;
+    height: 35px;
+    font-size: 18px;
+    color: white;
+}
+
+.prod-mana-btns button:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.details-btn{
+    background-color: darkgoldenrod;
+}
+
+.details-btn:hover{
+    background-color: lightgoldenrodyellow;
+}
+
+.edit-btn{
+    background-color: darkcyan;
+}
+
+.edit-btn:hover{
+    background-color: lightseagreen;
+}
+
+.delete-btn{
+    background-color: darkred;
+}
+
+.delete-btn:hover{
+    background-color: lightcoral;
+}
+
+.details-dialog{
+    display: none;
+}
+
+.edit-dialog{
+    display: none;
+}
+
+.delete-dialog{
+    display: none;
+}

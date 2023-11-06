@@ -1,13 +1,18 @@
 
 .myProducts-h1{
     text-align: center;
-    margin-top: 30px;
+    padding-top: 30px;
     font-size: 30px;
-    color: #71b7e6;
+    color: white;
 }
 
 .cards-container{
     display: flex;
     margin-top: 60px;
     justify-content: center;
+}
+
+.myProducts{
+    background-image: url('https://wallpapercrafter.com/sizes/1920x1080/254672-a-man-working-in-a-messy-workshop-with-a-table-cha.jpg');
+    height: 900px;
 }

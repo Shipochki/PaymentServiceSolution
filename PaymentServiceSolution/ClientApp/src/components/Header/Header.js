@@ -36,7 +36,6 @@ export const Header = () => {
                     Add Product
                    </Link>
                    <Link
-                    className="myProducts"
                     onClick={() => {
                       getProductsByCompanyId();
                     }}
