@@ -55,5 +55,21 @@
 			List<ProductModel> products = await _productService.GetTop3BestSellers();
 			return Ok(products);
 		}
+
+		[HttpPost]
+		[Route("[action]")]
+		public async Task<IActionResult> EditProduct([FromBody] object editProductFromKeys)
+		{
+			await _productService.EditProduct(editProductFromKeys);
+			return Ok();
+		}
+
+		[HttpPost]
+		[Route("[action]/{id}")]
+		public async Task<IActionResult> Delete(int id)
+		{
+			await _productService.Delete(id);
+			return Ok();
+		}
 	}
 }

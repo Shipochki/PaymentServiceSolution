@@ -21,7 +21,7 @@
 
         public async Task AddProduct(object addProducFromKeys)
 		{
-			AddProductJSONModel model = JsonConvert.DeserializeObject<AddProductJSONModel>(addProducFromKeys.ToString());
+			AddProductJSONModel? model = JsonConvert.DeserializeObject<AddProductJSONModel>(addProducFromKeys.ToString());
 
 			if (model == null || !IsValid(model))
 			{
@@ -43,6 +43,45 @@
 			product.PaymentLink = result;
 
 			await this._context.Products.AddAsync(product);
+			await this._context.SaveChangesAsync();
+		}
+
+		public async Task Delete(int id)
+		{
+			Product? product = await this._context.Products.FirstOrDefaultAsync(p => p.Id == id);
+
+			if (product == null)
+			{
+				return;
+			}
+
+			product.IsDeleted = true;
+
+			await this._context.SaveChangesAsync();
+		}
+
+		public async Task EditProduct(object editProductFormKeys)
+		{
+			EditProductJSONModel? model = JsonConvert.DeserializeObject<EditProductJSONModel>(editProductFormKeys.ToString());
+
+			if(model == null || !IsValid(model))
+			{
+				return;
+			}
+
+			Product? product = await this._context.Products.FirstOrDefaultAsync(p => p.Id == model.Id);
+
+			if(product == null)
+			{
+				return;
+			}
+
+			product.Name = model.Name;
+			product.Description = model.Description;
+			product.Price = model.Price;
+			product.ImageUrlLink = model.ImageUrlLink;
+			product.BookCoverBackImg = model.BookCoverBackImg;
+
 			await this._context.SaveChangesAsync();
 		}
 

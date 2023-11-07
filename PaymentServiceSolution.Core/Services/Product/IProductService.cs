@@ -13,5 +13,9 @@
 		public Task<List<ProductModel>> GetProductsByCompany(string text);
 
 		public Task<List<ProductModel>> GetTop3BestSellers();
+
+		public Task EditProduct(object editProductFormKeys);
+
+		public Task Delete(int id);
 	}
 }

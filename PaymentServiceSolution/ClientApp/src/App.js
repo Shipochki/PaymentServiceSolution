@@ -159,7 +159,7 @@ function App() {
 
       setProducts(result);
 
-      navigate("/myProducts");
+      navigate("/");
     } catch {
       console.log("Problem get products by company id");
     }
@@ -251,6 +251,34 @@ function App() {
     }
   }
 
+  const onEditProductSubmit = async (editProductFromKeys) => {
+    try {
+      await fetch(`/api/product/editProduct`, {
+        method: "POST", // GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors,cors, same-origin
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editProductFromKeys),
+      });
+    } catch (error) {
+      console.log('problem with edit product')
+    }
+
+    getProductsByCompanyId();
+  }
+
+  const onDeleteSubmit = async (id) => {
+    try {
+      await fetch(`/api/product/Delete/${id}`, {
+        method: "POST", // GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors,cors, same-origin
+      });
+    } catch (error) {
+      console.log('problem with delete product')
+    }
+  }
+
   useEffect(() => {
     getTop3Products();
 
@@ -269,7 +297,9 @@ function App() {
     getProductsByCompanyId,
     addStripeCustomer,
     onSearchCompnay,
-    getAllProducts
+    getAllProducts,
+    onEditProductSubmit,
+    onDeleteSubmit
   };
 
   return (
