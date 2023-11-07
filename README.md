@@ -2,7 +2,6 @@
 
 Payment Service Solution
 
-Description:
 The "Payment Service Solution" is a sophisticated web application designed to
 streamline and enchance the payment process for an online book store. This
 robust system leverages cutting-edge technologies to provide a secure, seamless,
