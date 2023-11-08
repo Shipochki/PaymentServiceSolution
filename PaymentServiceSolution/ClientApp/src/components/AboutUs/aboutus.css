@@ -1,0 +1,58 @@
+.main-page-aboutus{
+    padding: 70px;
+}
+
+.about-L-L h2{
+    text-align: center;
+    font-size: 30px;
+    color: lightcoral;
+    font-family: cursive;
+}
+
+.about-L-L-content{
+    display: flex;
+    margin-top: 20px;
+}
+
+.L-L-img{
+    width: 380px;
+}
+
+.L-L-img img{
+    width: 380px;
+    height: 300px;
+    border-radius: 32px;
+}
+
+.about-L-L-content p{
+    font-size: 22px;
+    padding: 80px 24% 80px 25px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.our-story{
+    margin-top: 30px;
+}
+
+.our-story h2{
+    text-align: center;
+    color: lightcoral;
+}
+
+.our-story-content{
+    display: flex;
+}
+
+.our-story-content p{
+    font-size: 22px;
+    padding: 80px 25px 80px 21%;
+    text-align: center;
+    font-family: cursive;
+}
+
+.our-story-img img{
+    width: 380px;
+    height: 300px;
+    border-radius: 32px;
+}

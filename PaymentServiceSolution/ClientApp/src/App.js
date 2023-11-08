@@ -16,6 +16,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import { Checkout } from "./components/Checkout/Checkout";
 import { Catalog } from "./components/Catalog/Catalog";
 import { Success } from "./components/Success/Success.js";
+import { AboutUs } from "./components/AboutUs/AboutUs.js";
 
 function App() {
   const navigate = useNavigate();
@@ -321,6 +322,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/catalog" element={<Catalog allProducts={allProducts}/>} />
             <Route path="/success" element={<Success />} />
+            <Route path="/aboutus" element={<AboutUs />} />
             {localStorage.isCompany == "true" && (
               <Route path="/addProduct" element={<AddProduct />} />
             )}
