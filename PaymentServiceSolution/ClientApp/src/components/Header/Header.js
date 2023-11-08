@@ -22,6 +22,7 @@ export const Header = () => {
               }}>
                 Catalog
               </button>
+          <Link className="about-us-btn" to={"/aboutus"}>About Us</Link>
           {localStorage.getItem("id") && (
             <div className="div-btns">
               

@@ -186,7 +186,7 @@ export const ProductManage = ({id, imageUrlLink, bookCoverBackImg, name, descrip
         </div>
         <div className="delete-dialog">
           <div className="delete-dialog-div">
-            <h2>Are you sure, you wanted to delete ?</h2>
+            <h2>Are you sure, you want to delete ?</h2>
             <div className="book-info">
               <p>{name}</p>
               <img src={imageUrlLink} />

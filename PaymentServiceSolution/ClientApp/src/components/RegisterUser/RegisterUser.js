@@ -79,7 +79,7 @@ export const RegisterUser = () => {
                   Password
                 </label>
                 <input
-                  type="passowrd"
+                  type="password"
                   name="password"
                   id="register-password"
                   value={values.password}

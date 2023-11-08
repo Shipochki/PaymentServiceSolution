@@ -58,7 +58,7 @@ export const RegisterCompany = () => {
               <div class="input-box">
                 <label htmlFor="pass" class="details">Password</label>
                 <input
-                  type="passowrd"
+                  type="password"
                   name="password"
                   id="register-password"
                   value={values.password}
