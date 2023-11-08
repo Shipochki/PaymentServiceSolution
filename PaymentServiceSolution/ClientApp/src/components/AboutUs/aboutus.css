@@ -2,6 +2,15 @@
     padding: 70px;
 }
 
+.main-page-aboutus hr{
+    border: 5px solid lightblue;
+    border-radius: 32px;
+}
+
+.about-L-L{
+    margin-bottom: 20px;
+}
+
 .about-L-L h2{
     text-align: center;
     font-size: 30px;
@@ -32,12 +41,13 @@
 }
 
 .our-story{
-    margin-top: 30px;
+    margin: 30px 0px;
 }
 
 .our-story h2{
     text-align: center;
     color: lightcoral;
+    font-family: cursive;
 }
 
 .our-story-content{
@@ -55,4 +65,97 @@
     width: 380px;
     height: 300px;
     border-radius: 32px;
+}
+
+.our-vision{
+    margin: 30px 0px;
+}
+
+.our-vision h2{
+    text-align: center;
+    color: lightcoral;
+    font-family: cursive;
+}
+
+.our-vision-content{
+    display: flex;
+}
+
+.our-vision-content p{
+    font-size: 22px;
+    padding: 80px 24% 80px 25px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.our-vision-img img{
+    width: 380px;
+    height: 300px;
+    border-radius: 32px;
+}
+
+.what-we-offer{
+    margin: 30px 0px;
+}
+
+.what-we-offer h2{
+    text-align: center;
+    color: lightcoral;
+    font-family: cursive;
+}
+
+.what-we-offer-content{
+    display: flex;
+}
+
+.what-we-offer p{
+    font-size: 22px;
+    padding: 80px 25px 80px 21%;
+    text-align: center;
+    font-family: cursive;
+}
+
+.what-we-offer-img img{
+    width: 380px;
+    height: 300px;
+    border-radius: 32px;
+}
+
+.why-choose{
+    margin: 30px 0px;
+}
+
+.why-choose h2{
+    text-align: center;
+    color: lightcoral;
+    font-family: cursive;
+}
+
+.why-choose-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.why-choose-content div{
+    display: flex;
+    align-items: center;
+}
+
+.why-choose-content div p{
+    width: auto;
+    font-size: 18px;
+    margin-left: 40px;
+    font-family: cursive;
+}
+
+.why-choose-content div p b{
+    font-size: 20px;
+}
+
+.why-choose-content div img{
+    width: 240px;
+    height: 240px;
+    margin-right: 12px;
 }
