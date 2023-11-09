@@ -9,6 +9,18 @@
     font-size: 18px;
 }
 
-#addProd{
-    margin-top: 40px;
+#addProduct{
+    width: 700px;
 }
+
+#addProd{
+    margin: 0;
+}
+
+.section-product{
+    background-image: url('https://wallpapercrafter.com/desktop/160948-digital-women-workshop-car-vehicle-artwork.jpg');
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+

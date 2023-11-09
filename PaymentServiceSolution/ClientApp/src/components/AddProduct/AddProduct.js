@@ -29,7 +29,7 @@ export const AddProduct = () => {
   );
 
   return (
-    <section id="add-product" className="sction-product">
+    <section id="add-product" className="section-product">
       <form id="addProduct" method="post" onSubmit={onSubmit}>
         <div className="container" id="addProd">
           <h1>Add Product</h1>
